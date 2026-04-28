@@ -1372,7 +1372,7 @@ const SubMap = {
         </div>
         <div class="station-info">
           <div class="station-name">${level.name}</div>
-          <div class="station-points">${level.points} ⭐</div>
+
         </div>
       </div>
     `;
