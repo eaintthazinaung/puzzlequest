@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-card__top">
+        <h1 style="font-size:1.8rem;">PuzzleQuest</h1>
+        <p style="color:var(--tx2);font-size:.92rem;">Enter the world of Aetheria — login or create a new profile.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login">Login</button>
+        <button class="auth-tab" id="tab-register">Register</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="l-name">Player Name</label>
+          <input type="text" id="l-name" placeholder="Enter your player name…" maxlength="30" autocomplete="username" required/>
+          <div class="form-err" id="login-err"></div>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%; display: flex; justify-content: center; align-items: center;">🎮 Enter Aetheria</button>
+        <p class="auth-link" style="margin-top:12px;">No profile? <a href="#" onclick="document.getElementById('tab-register').click();return false;">Create one here</a></p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="register-form" class="hidden" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="r-name">Choose a Player Name</label>
+          <input type="text" id="r-name" placeholder="Pick a unique name…" maxlength="30" autocomplete="off" required/>
+          <div class="form-err" id="register-err"></div>
+        </div>
+        <div class="av-section">
+          <label class="form-label">Choose Your Avatar</label>
+          <div class="av-preview-row">
+            <span>Selected:</span>
+            <span id="av-preview">😀</span>
+          </div>
+          <div id="avatar-grid"></div>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%; display: flex; justify-content: center; align-items: center;">✅ Create Profile</button>
+        <p class="auth-link" style="margin-top:12px;">Already registered? <a href="#" onclick="document.getElementById('tab-login').click();return false;">Login here</a></p>
+      </form>
+
+      <p class="auth-link" style="margin-top:16px;"><a href="index.html" style="color:var(--tx3);">← Back to Home</a></p>
+    </div>
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

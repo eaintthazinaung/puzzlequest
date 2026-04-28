@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="profile-page">
+    <div id="profile-header"></div>
+    <div id="profile-stats"></div>
+
+    <div class="profile-section">
+      <h3 class="profile-section__title">❤️ Lives</h3>
+      <div id="profile-lives"></div>
+    </div>
+
+    <div class="profile-section">
+      <h3 class="profile-section__title">🏅 Achievements</h3>
+      <p class="text-muted" style="margin-bottom:14px;">Hover a badge to see how to earn it.</p>
+      <div id="profile-achievements"></div>
+    </div>
+
+    <div class="profile-section">
+      <h3 class="profile-section__title">📚 Knowledge Library</h3>
+      <p style="color:var(--tx2);margin-bottom:14px;">Review all the Knowledge Cards you have collected.</p>
+      <a href="library.html" class="btn btn--outline">📚 View My Library</a>
+    </div>
+
+    <div class="profile-section">
+      <h3 class="profile-section__title">✨ Guardian Spirit</h3>
+      <p style="color:var(--tx2);margin-bottom:14px;">Change your bonded guardian to switch the color theme.</p>
+      <button id="change-guardian-btn" class="btn btn--outline">✨ Change Guardian</button>
+    </div>
+
+    <div class="profile-section">
+      <h3 class="profile-section__title">👤 Switch Profile</h3>
+      <p class="text-muted" style="margin-bottom:14px;">Other profiles saved on this device:</p>
+      <div id="profile-others"></div>
+    </div>
+
+    <div class="profile-actions">
+      <button id="new-profile-btn" class="btn btn--outline">➕ New Profile</button>
+      <button id="logout-btn"      class="btn btn--outline" style="border-color:var(--err);color:var(--err);">🚪 Logout</button>
+      <button id="delete-account-btn" class="btn btn--outline" style="border-color:var(--err);color:var(--err);">🗑️ Delete Account</button>
+    </div>
+  </div>
+</main>
+
+<!-- DELETE ACCOUNT MODAL -->
+<div class="modal-ov" id="delete-modal" role="dialog" aria-modal="true">
+  <div class="modal" style="max-width:400px;">
+    <div style="text-align:center;margin-bottom:24px;">
+      <span style="font-size:3rem;display:block;margin-bottom:14px;">⚠️</span>
+      <h2 style="color:var(--err);margin-bottom:8px;">Delete Account</h2>
+      <p style="color:var(--tx2);">This action cannot be undone. All your progress, points, and Knowledge Cards will be permanently lost.</p>
+    </div>
+    <div style="background:var(--bg-alt);border-radius:var(--r-md);padding:16px;margin-bottom:24px;">
+      <p style="font-weight:600;margin-bottom:8px;color:var(--tx);">This will permanently delete:</p>
+      <ul style="list-style:disc;padding-left:20px;color:var(--tx2);font-size:.87rem;display:flex;flex-direction:column;gap:4px;">
+        <li>Your player profile &amp; guardian bond</li>
+        <li>All earned points (⭐ <span id="delete-points">0</span>)</li>
+        <li>All collected Knowledge Cards</li>
+        <li>Achievements and statistics</li>
+      </ul>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn--outline" style="flex:1;" id="delete-cancel">Cancel</button>
+      <button class="btn btn--danger"  style="flex:1;" id="delete-confirm">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to Aetheria — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="welcome-page">
+    <div class="welcome-scene">
+
+      <div class="welcome-barnaby">
+        <div class="welcome-barnaby__image">
+          <img src="assets/character/barnaby1.png" alt="Barnaby" class="welcome-owl-img" onerror="this.src='https://placehold.co/150x150/0ea5e9/white?text=🦉'">
+        </div>
+        <div class="welcome-barnaby__name">Barnaby</div>
+        <p style="font-size:.78rem;color:var(--tx3);margin-top:4px;">The Archivist</p>
+      </div>
+
+      <div class="welcome-panel">
+        <div class="welcome-steps">
+          <div class="welcome-step active" id="welcome-step"></div>
+        </div>
+        <div class="welcome-dots" id="welcome-dots"></div>
+        <div class="welcome-nav">
+          <button class="btn btn--ghost" id="welcome-skip">Skip →</button>
+          <div class="welcome-nav-right">
+            <button class="btn btn--ghost" id="welcome-back" style="display: none;">← Back</button>
+            <button class="btn btn--primary" id="welcome-next">Next →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PuzzleQuest — Slide. Solve. Learn.</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+
+  <!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <span class="hero__badge">🌍 The World of Aetheria Needs You</span>
+    <h1 class="hero__title">
+      <span class="hero__title-word">Puzzle</span>
+      <span class="hero__title-word">Quest</span>
+    </h1>
+    <p class="hero__sub">
+      "The Great Gray has stolen Aetheria's memories and shattered the world into puzzle pieces.
+      Slide tiles, restore lost memories, and unlock fascinating knowledge cards."
+    </p>
+    <div class="hero__cta">
+      <button id="hero-play-btn" class="btn btn--primary btn--lg">Begin Your Journey</button>
+    </div>
+  </div>
+</section>
+
+<!-- STORY STRIP -->
+<section class="story-strip">
+  <div class="container story-strip__container">
+    <!-- Story Content - Now on LEFT -->
+    <div class="story-strip__content">
+      <span class="section__label story-label">📖 The Legend of Aetheria</span>
+      <p class="story-text">
+        Aetheria was once a world of color, where every shade was born from the memories of its people. 
+        But when a mysterious force known as <strong class="story-highlight">"The Great Gray"</strong> erased those memories, 
+        the world faded into silence—leaving everything broken, empty, and gray.
+      </p>
+      <p class="story-text">
+        High above it all, the <strong class="story-highlight">"Lost Atelier"</strong> still remains—a forgotten place 
+        where memories can be restored. There, a lonely owl named <strong class="story-highlight">"Barnaby"</strong> waits 
+        for someone who can bring the colors back.
+      </p>
+      <p class="story-text">
+        <strong class="story-highlight">"That someone is you."</strong>
+      </p>
+      <p class="story-text">
+        Guided by a mysterious message, you will choose a Guardian spirit and journey across shattered worlds, 
+        solving puzzles to recover what was lost. With every memory you restore, a piece of Aetheria comes back to life.
+      </p>
+      <div class="story-quote">
+        <span class="story-quote__icon">✨</span>
+        <span>"The colors are waiting to return. Will you answer the call?"</span>
+      </div>
+    </div>
+    
+    <!-- Owl Image - Now on RIGHT -->
+    <div class="story-strip__image">
+      <div class="story-image__wrapper">
+        <div class="story-image__character">
+          <img src="assets/character/barnaby.png" alt="Barnaby the Archivist" class="story-character-img">
+        </div>
+        <div class="story-image__glow"></div>
+      </div>
+      <p class="story-image__caption">"Barnaby" the Archivist</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTER SHOWCASE SECTION -->
+<section class="character-showcase">
+  <div class="container">
+    <div class="showcase-header">
+      <span class="showcase-badge">✨ Choose Your Guardian ✨</span>
+      <h2 class="showcase-title">Meet the Guardians of Aetheria</h2>
+      <p class="showcase-subtitle">Each Guardian has a unique spirit, theme, and purpose. Choose one to begin your journey.</p>
+    </div>
+
+    <div class="showcase-container">
+      <!-- Left Side - Large Character Portrait -->
+      <div class="showcase-portrait">
+        <div class="portrait-frame">
+          <div class="portrait-glow"></div>
+          <img id="main-character-img" class="portrait-image" src="assets/character/elara.png" alt="Elara">
+        </div>
+      </div>
+
+      <!-- Right Side - Info Card -->
+      <div class="showcase-card">
+        <div class="card-badge" id="character-theme-badge">🌿 Emerald Guardian</div>
+        <h2 id="character-name" class="card-name">Elara</h2>
+        <h3 id="character-title" class="card-title">The Compassionate Restorer</h3>
+        <p id="character-description" class="card-description">
+          She is kind, gentle, and caring. She wants to bring back warmth, happiness, and smiles by restoring lost memories.
+        </p>
+        <div class="card-quote">
+          <span class="quote-icon">💬</span>
+          <p id="character-slogan" class="quote-text">"Every restored memory heals a heart."</p>
+        </div>
+        <div class="card-theme">
+          <span class="theme-label">Theme Color:</span>
+          <span id="character-theme" class="theme-value">Emerald Green</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom - Horizontal Carousel -->
+<div class="carousel-section">
+  <button class="carousel-nav carousel-prev" id="carousel-prev">❮</button>
+  
+  <div class="carousel-container">
+    <div class="carousel-track" id="carousel-track">
+      <!-- Character 1 - Elara -->
+      <div class="carousel-item active" data-character="elara">
+        <div class="avatar-circle" style="--avatar-color: #10b981">
+          <img src="assets/character/elara-thumb.png" alt="Elara" class="avatar-img contain">
+        </div>
+        <span class="avatar-name">Elara</span>
+      </div>
+      
+      <!-- Character 2 - Kael -->
+      <div class="carousel-item" data-character="kael">
+        <div class="avatar-circle" style="--avatar-color: #7c3aed">
+          <img src="assets/character/kael-thumb.png" alt="Kael" class="avatar-img contain">
+        </div>
+        <span class="avatar-name">Kael</span>
+      </div>
+      
+      <!-- Character 3 - Orion -->
+      <div class="carousel-item" data-character="orion">
+        <div class="avatar-circle" style="--avatar-color: #d97706">
+          <img src="assets/character/orion-thumb.png" alt="Orion" class="avatar-img contain">
+        </div>
+        <span class="avatar-name">Orion</span>
+      </div>
+    </div>
+  </div>
+  
+  <button class="carousel-nav carousel-next" id="carousel-next">❯</button>
+</div>
+  </div>
+</section>
+
+<!-- 5 WORLDS OF MEMORIES AWAIT - Simple Worlds Showcase -->
+<section class="worlds-carousel-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section__label">Explore Aetheria</span>
+      <h2 class="section-title">5 worlds of memories await</h2>
+      <p class="section-subtitle">Each floating island holds 5 hidden memory puzzles to restore.</p>
+    </div>
+
+    <div class="wide-carousel">
+      <button class="wide-prev" id="widePrev">❮</button>
+      
+      <div class="wide-carousel-container">
+        <div class="wide-carousel-slides" id="wideCarouselSlides">
+          <!-- World 1 - Animals -->
+          <div class="wide-slide" data-world="animals">
+            <div class="wide-image-card">
+              <img src="assets/worlds/animals.png" alt="Whispering Woods" onerror="Image">
+            </div>
+          </div>
+
+          <!-- World 2 - Famous -->
+          <div class="wide-slide" data-world="famous">
+            <div class="wide-image-card">
+              <img src="assets/worlds/famous.png" alt="History of Legends" onerror="Image">
+            </div>
+          </div>
+
+          <!-- World 3 - Cars -->
+          <div class="wide-slide" data-world="cars">
+            <div class="wide-image-card">
+              <img src="assets/worlds/cars.png" alt="Wonder Wheels" onerror="Image">
+            </div>
+          </div>
+
+          <!-- World 4 - Flowers -->
+          <div class="wide-slide" data-world="flowers">
+            <div class="wide-image-card">
+              <img src="assets/worlds/flowers.png" alt="Blooming Meadows" onerror="Image">
+            </div>
+          </div>
+
+          <!-- World 5 - Wonders -->
+          <div class="wide-slide" data-world="wonders">
+            <div class="wide-image-card">
+              <img src="assets/worlds/wonders.png" alt="Echoes of Time" onerror="Image">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="wide-next" id="wideNext">❯</button>
+    </div>
+
+    <!-- Simple Text Below - No Button, Smaller Font -->
+    <div class="wide-text-info" id="wideTextInfo">
+      <span class="world-icon">🌲</span>
+      <span class="world-name">Whispering Woods</span>
+      <span class="world-category-simple">Animals</span>
+    </div>
+
+    <div class="wide-dots" id="wideDots">
+      <span class="wide-dot active" data-index="0"></span>
+      <span class="wide-dot" data-index="1"></span>
+      <span class="wide-dot" data-index="2"></span>
+      <span class="wide-dot" data-index="3"></span>
+      <span class="wide-dot" data-index="4"></span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO PLAY -->
+<section class="how-section" id="how">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:0;">
+        <span class="section__label">How It Works</span>
+        <h2 style="margin-top:8px;">Simple rules, endless adventure</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card"><div class="how-card__num">1</div><span class="how-card__icon">👤</span><h3>Create Profile</h3><p>Sign up, pick an avatar emoji, and meet Barnaby.</p></div>
+        <div class="how-card"><div class="how-card__num">2</div><span class="how-card__icon">✨</span><h3>Choose Guardian</h3><p>Bond with Elara, Kael, or Orion to set your theme.</p></div>
+        <div class="how-card"><div class="how-card__num">3</div><span class="how-card__icon">🗺️</span><h3>Pick a World</h3><p>Choose one of 5 floating island worlds to explore.</p></div>
+        <div class="how-card"><div class="how-card__num">4</div><span class="how-card__icon">🧩</span><h3>Slide &amp; Solve</h3><p>Move tiles to reconstruct the image within the move limit.</p></div>
+        <div class="how-card"><div class="how-card__num">5</div><span class="how-card__icon">📚</span><h3>Collect Knowledge</h3><p>Every solved puzzle unlocks a Polaroid Knowledge Card.</p></div>
+      </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <span class="section__label">Features</span>
+        <h2 style="margin-top:8px;">Everything in one place</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:18px;">
+        <div class="how-card"><span class="how-card__icon">❤️</span><h3>Life System</h3><p>5 lives, refilling every minute. Buy more with points.</p></div>
+        <div class="how-card"><span class="how-card__icon">⭐</span><h3>Points</h3><p>Earn points per puzzle. Bigger grids earn bigger rewards.</p></div>
+        <div class="how-card"><span class="how-card__icon">🏆</span><h3>Leaderboard</h3><p>Compete against all profiles on this device.</p></div>
+        <div class="how-card"><span class="how-card__icon">📖</span><h3>Flip Cards</h3><p>Polaroid-style knowledge cards with a satisfying 3D flip.</p></div>
+      </div>
+    </div>
+  </section>
+  
+<!-- CTA - With Small Transparent Owl Image -->
+<section class="cta-section">
+  <div class="container cta-container">
+    <div class="cta-content">
+      <div class="cta-owl">
+        <img src="assets/character/barnaby1.png" alt="Barnaby the Archivist" class="cta-owl-img" onerror="this.src='https://placehold.co/100x100/0ea5e9/white?text=🦉'">
+      </div>
+      <h2 class="cta-title">Ready to restore Aetheria?</h2>
+      <p class="cta-text">
+        Barnaby is waiting. Create your profile, choose your Guardian, and begin the journey!
+      </p>
+      <button id="hero-play-btn-2" class="btn btn--primary btn--lg" onclick="location.href=window.PQ?.Auth?.loggedIn()?'worldmap.html':'login.html'">
+      ▶ Start Your Adventure
+    </button>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

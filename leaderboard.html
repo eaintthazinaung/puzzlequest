@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leaderboard — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="lb-page">
+    <div class="page-hero">
+      <h1>🏆 Leaderboard</h1>
+      <p>Rankings based on total points earned. Can you reach #1?</p>
+    </div>
+    <div id="lb-podium" aria-label="Top 3 players"></div>
+    <div class="lb-table-wrap">
+      <table class="lb-table" aria-label="Full rankings">
+        <thead>
+          <tr>
+            <th>Rank</th><th>Avatar</th><th>Player</th>
+            <th>Points</th><th>Solved</th><th>Best Time</th>
+          </tr>
+        </thead>
+        <tbody id="lb-tbody"></tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="worldmap.html" class="btn btn--primary">🎮 Play a Puzzle</a>
+    </div>
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

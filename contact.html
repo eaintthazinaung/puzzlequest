@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .contact-page  { max-width: 1060px; margin: 0 auto; padding: 40px 24px 64px; }
+    .contact-hero  { text-align: center; margin-bottom: 44px; }
+    .contact-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 44px; }
+    .contact-card  { background: var(--bg-card); border: 1.5px solid var(--bdr); border-radius: var(--r-xl); padding: 28px; }
+    .contact-method { display: flex; align-items: center; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--bdr); }
+    .contact-method:last-child { border-bottom: none; }
+    .contact-icon  { font-size: 1.5rem; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--pri), var(--acc)); border-radius: 50%; flex-shrink: 0; }
+    .contact-detail h3 { font-size: 1rem; margin-bottom: 2px; }
+    .contact-detail p  { color: var(--tx2); font-size: .87rem; }
+    .contact-detail a  { color: var(--pri); font-weight: 600; }
+    .success-msg { display: none; background: rgba(34,197,94,.08); border: 1.5px solid var(--ok); border-radius: var(--r-md); padding: 14px; color: var(--ok); text-align: center; margin-bottom: 18px; font-weight: 600; }
+    .social-links { display: flex; gap: 14px; justify-content: center; margin-top: 28px; }
+    .social-link  { width: 46px; height: 46px; border-radius: 50%; background: var(--bg-alt); border: 1.5px solid var(--bdr); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: all .2s var(--ease-b); }
+    .social-link:hover { transform: translateY(-4px); border-color: var(--pri); background: var(--pri); }
+    @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="contact-page">
+
+    <div class="contact-hero">
+      <span class="section__label">Get in Touch</span>
+      <h1 style="font-size:2.4rem;margin-bottom:12px;">Contact Us</h1>
+      <p style="color:var(--tx2);">Have feedback, questions, or just want to say hello? We'd love to hear from you!</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3 style="margin-bottom:20px;">📬 Reach Us Directly</h3>
+        <div class="contact-method">
+          <div class="contact-icon">📧</div>
+          <div class="contact-detail">
+            <h3>Email</h3>
+            <p><a href="mailto:support@puzzlequest.com">40840485@live.napier.ac.uk</a></p>
+            <p>We reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">🐦</div>
+          <div class="contact-detail">
+            <h3>X (Twitter)</h3>
+            <p><a href="#" target="_blank">@PuzzleQuest</a></p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">💬</div>
+          <div class="contact-detail">
+            <h3>Discord</h3>
+            <p><a href="#" target="_blank">Join our community</a></p>
+            <p>Chat with other puzzle lovers!</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">🏢</div>
+          <div class="contact-detail">
+            <h3>Studio</h3>
+            <p>123 Puzzle Lane<br/>Myanmar, Pyi Yeik Thar Street</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3 style="margin-bottom:20px;">✍️ Send us a Message</h3>
+        <div class="success-msg" id="form-success">✅ Message sent! We'll get back to you soon.</div>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name *</label>
+            <input type="text" id="name" required placeholder="Jane Smith"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input type="email" id="email" required placeholder="jane@example.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <select id="subject">
+              <option>General Feedback</option>
+              <option>Bug Report</option>
+              <option>Feature Suggestion</option>
+              <option>Support Question</option>
+              <option>Partnership Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message *</label>
+            <textarea id="message" required placeholder="Tell us what's on your mind…" style="min-height:110px;resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;">📨 Send Message</button>
+        </form>
+        <p style="font-size:.78rem;color:var(--tx3);margin-top:12px;text-align:center;">* This is a demo — messages are not actually sent.</p>
+      </div>
+
+    </div>
+
+    <div class="social-links">
+      <a href="#" class="social-link">📘</a>
+      <a href="#" class="social-link">🐦</a>
+      <a href="#" class="social-link">📷</a>
+      <a href="#" class="social-link">💬</a>
+      <a href="#" class="social-link">🎮</a>
+    </div>
+
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('contact-form')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        if (window.PQ?.toast) PQ.toast('Please fill in all required fields.', 'warning');
+        return;
+      }
+      if (!email.includes('@') || !email.includes('.')) {
+        if (window.PQ?.toast) PQ.toast('Please enter a valid email address.', 'warning');
+        return;
+      }
+      const success = document.getElementById('form-success');
+      success.style.display = 'block';
+      this.reset();
+      setTimeout(() => { success.style.display = 'none'; }, 5000);
+    });
+  });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

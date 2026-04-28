@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Playing — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/game.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="game-page">
+
+    <!-- STATUS BAR -->
+    <div class="game-status" role="status" aria-live="polite">
+      <div class="status-chunk"><div id="game-lives"></div></div>
+      <div class="status-sep"></div>
+      <div class="status-chunk" id="game-pts">⭐ 0</div>
+      <div class="status-sep"></div>
+      <div class="status-chunk" id="game-timer">⏱️ 0:00</div>
+    </div>
+
+    <!-- MOVE PROGRESS BAR -->
+    <div class="game-bar-wrap">
+      <span class="game-bar-label" id="move-counter">0 / 100 moves</span>
+      <div class="game-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        <div class="game-bar__fill" id="move-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- GAME AREA + PREVIEW -->
+    <div class="game-area-with-preview">
+      <div class="game-area">
+        <div id="puzzle-grid" role="grid" aria-label="Sliding puzzle"></div>
+      </div>
+
+      <div class="game-preview" id="game-preview">
+        <div class="preview-header">
+          <span class="preview-label">🔍 Preview</span>
+          <button class="preview-toggle" id="preview-toggle" title="Toggle preview">👁️</button>
+        </div>
+        <div class="preview-image">
+          <img src="" alt="Puzzle preview" id="preview-img" loading="lazy"/>
+        </div>
+        <div class="preview-info" id="preview-info">
+          <span id="preview-category"></span>
+          <span id="preview-name"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROLS - Only Sound button, Music removed -->
+    <div class="game-controls" role="toolbar">
+      <button class="g-btn g-btn--pause"   id="pause-btn">⏸️ Pause</button>
+      <button class="g-btn g-btn--restart" id="restart-btn">🔀 Restart</button>
+      <button class="g-btn g-btn--sound"   id="sound-btn">🔊 Sound On</button>
+      <button class="g-btn g-btn--quit"    id="quit-btn">🚪 Quit</button>
+    </div>
+
+  </div>
+</main>
+
+<!-- PAUSE OVERLAY -->
+<div id="pause-overlay" role="dialog" aria-modal="true">
+  <div class="pause-box">
+    <span class="pause-box__icon">⏸️</span>
+    <h2>Paused</h2>
+    <p>Take a breath — your progress is safe!</p>
+    <button class="btn btn--primary" id="pause-resume">▶️ Resume</button>
+  </div>
+</div>
+
+<!-- COMPLETE MODAL -->
+<div class="modal-ov" id="complete-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="cm-header">
+      <span class="cm-emoji">🎉</span>
+      <h2 class="cm-title">Memory Restored!</h2>
+      <p style="color:var(--tx2);font-size:.87rem;">You brought a piece of Aetheria back to life!</p>
+    </div>
+    <div class="cm-stats">
+      <div class="cm-stat"><span class="cm-stat__val" id="cm-moves">–</span><span class="cm-stat__lbl">Moves</span></div>
+      <div class="cm-stat"><span class="cm-stat__val" id="cm-time">–</span><span class="cm-stat__lbl">Time</span></div>
+      <div class="cm-stat"><span class="cm-stat__val" id="cm-pts" style="color:var(--warn)">–</span><span class="cm-stat__lbl">Points</span></div>
+    </div>
+
+    <!-- Knowledge card will be inserted here by JavaScript -->
+    <div id="cm-card"></div>
+    <p style="text-align:center;font-size:.75rem;color:var(--tx3);margin:-8px 0 14px;">Hover or tap the card to read the fact</p>
+
+    <div class="cm-actions">
+      <button class="btn btn--primary" id="cm-again">🔄 Play Again</button>
+      <button class="btn btn--outline"  id="cm-hub">🗺️ World Map</button>
+      <button class="btn btn--ghost"    id="cm-library">📚 Library</button>
+    </div>
+  </div>
+</div>
+
+<!-- GAME OVER MODAL -->
+<div class="modal-ov" id="gameover-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="gm-header">
+      <span class="gm-emoji">💔</span>
+      <h2 class="gm-title">Out of Moves!</h2>
+      <p style="color:var(--tx2);font-size:.87rem;">You exceeded the move limit and lost a life.</p>
+    </div>
+    <div class="gm-lives-row">
+      <div id="gm-lives"></div>
+      <span id="gm-remaining"></span>
+    </div>
+    <div id="gm-nolives">⏳ No lives left! Lives refill one per minute, or buy one on your profile.</div>
+    <div class="gm-actions">
+      <button class="btn btn--primary" id="gm-retry">🔄 Try Again</button>
+      <button class="btn btn--outline"  id="gm-hub">🗺️ World Map</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

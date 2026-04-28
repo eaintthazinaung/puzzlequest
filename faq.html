@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .faq-page { max-width: 860px; margin: 0 auto; padding: 40px 24px 64px; }
+    .faq-hero  { text-align: center; margin-bottom: 40px; }
+    .faq-search { margin-bottom: 28px; position: relative; }
+    .faq-search input { padding: 14px 20px 14px 48px; border-radius: var(--r-full); }
+    .faq-search::before { content: '🔍'; position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: .55; }
+    .faq-cats  { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; justify-content: center; }
+    .faq-cat-btn {
+      padding: 7px 18px; border-radius: var(--r-full);
+      border: 1.5px solid var(--bdr); background: var(--bg-card);
+      color: var(--tx2); font-weight: 600; font-size: .87rem;
+      cursor: pointer; transition: all .18s;
+    }
+    .faq-cat-btn:hover, .faq-cat-btn.active { background: var(--pri); border-color: var(--pri); color: #fff; }
+    .faq-item {
+      background: var(--bg-card); border: 1.5px solid var(--bdr);
+      border-radius: var(--r-lg); margin-bottom: 12px; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .faq-item:hover { border-color: var(--pri); box-shadow: var(--sh-sm); }
+    .faq-question {
+      padding: 18px 22px; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-weight: 700; font-size: 1rem; gap: 16px;
+    }
+    .faq-question .toggle { font-size: 1.1rem; transition: transform .25s; flex-shrink: 0; }
+    .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; padding: 0 22px; overflow: hidden;
+      transition: all .3s ease; color: var(--tx2); border-top: 0 solid var(--bdr);
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 22px 18px; border-top-width: 1px; }
+    .faq-answer p  { margin-bottom: 8px; font-size: .92rem; }
+    .faq-answer ul { list-style: disc; padding-left: 20px; margin-top: 8px; font-size: .92rem; }
+    .faq-answer li { margin-bottom: 4px; }
+    .still-q { text-align: center; margin-top: 44px; padding: 40px; background: var(--bg-alt); border-radius: var(--r-xl); border: 1.5px solid var(--bdr); }
+  </style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="faq-page">
+
+    <div class="faq-hero">
+      <span class="section__label">Got Questions?</span>
+      <h1 style="font-size:2.4rem;margin-bottom:12px;">Frequently Asked Questions</h1>
+      <p style="color:var(--tx2);">Everything you need to know about PuzzleQuest</p>
+    </div>
+
+    <div class="faq-search">
+      <input type="text" id="faq-search" placeholder="Search FAQ…" aria-label="Search FAQ"/>
+    </div>
+
+    <div class="faq-cats" id="faq-cats">
+      <button class="faq-cat-btn active" data-cat="all">All</button>
+      <button class="faq-cat-btn" data-cat="gameplay">🎮 Gameplay</button>
+      <button class="faq-cat-btn" data-cat="lives">❤️ Lives</button>
+      <button class="faq-cat-btn" data-cat="points">⭐ Points</button>
+      <button class="faq-cat-btn" data-cat="account">👤 Account</button>
+      <button class="faq-cat-btn" data-cat="technical">🛠️ Technical</button>
+    </div>
+
+    <div id="faq-list">
+      <div class="faq-item" data-category="gameplay">
+        <div class="faq-question">How do I play PuzzleQuest?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Choose a category → select an image → pick a grid size (3×3 to 7×7) → click tiles to slide them and reconstruct the image. Complete the puzzle within the move limit to win!</p></div>
+      </div>
+      <div class="faq-item" data-category="gameplay">
+        <div class="faq-question">What happens when I complete a puzzle?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>You'll see your results (moves, time, points earned) and unlock a Knowledge Card with an interesting fact about the image. The card is saved to your Library forever!</p></div>
+      </div>
+      <div class="faq-item" data-category="gameplay">
+        <div class="faq-question">Can I restart a puzzle mid-game?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Yes! Click the 🔀 Restart button during a game. A confirmation dialog will appear, and if you confirm, the tiles will be reshuffled and your moves and timer will reset. No life is lost for restarting.</p></div>
+      </div>
+      <div class="faq-item" data-category="lives">
+        <div class="faq-question">How does the life system work?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>You start with 5 lives. A life is lost <strong>only</strong> if you exceed the move limit. Lives automatically refill one per minute up to the maximum of 5. You can also buy lives with 10 points each.</p></div>
+      </div>
+      <div class="faq-item" data-category="lives">
+        <div class="faq-question">What are the move limits for each grid size?<span class="toggle">➕</span></div>
+        <div class="faq-answer">
+          <ul><li>3×3 → 100 moves</li><li>4×4 → 200 moves</li><li>5×5 → 300 moves</li><li>6×6 → 400 moves</li><li>7×7 → 500 moves</li></ul>
+        </div>
+      </div>
+      <div class="faq-item" data-category="points">
+        <div class="faq-question">How many points do I earn per puzzle?<span class="toggle">➕</span></div>
+        <div class="faq-answer">
+          <ul><li>3×3 → 10 pts</li><li>4×4 → 15 pts</li><li>5×5 → 25 pts</li><li>6×6 → 35 pts</li><li>7×7 → 50 pts</li></ul>
+        </div>
+      </div>
+      <div class="faq-item" data-category="points">
+        <div class="faq-question">What can I do with points?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Points appear on the leaderboard. You can also spend them on extra lives — 10 points per life — from your Profile page.</p></div>
+      </div>
+      <div class="faq-item" data-category="account">
+        <div class="faq-question">How do I create an account?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Click "Login" in the navigation, switch to the Register tab, choose a unique player name, and select an avatar emoji. Your progress is saved locally on this device.</p></div>
+      </div>
+      <div class="faq-item" data-category="account">
+        <div class="faq-question">Can I have multiple profiles?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Yes! Click "➕ New Profile" on your Profile page to create another account. Switch between profiles from the "Switch Profile" section.</p></div>
+      </div>
+      <div class="faq-item" data-category="account">
+        <div class="faq-question">How do I delete my account?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Go to your Profile page and click "🗑️ Delete Account". Confirm in the dialog that appears. This permanently removes all your data and cannot be undone.</p></div>
+      </div>
+      <div class="faq-item" data-category="technical">
+        <div class="faq-question">Is my data saved in the cloud?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>All data is stored in your browser's LocalStorage. Progress stays on this device only. Clearing your browser data will erase your progress.</p></div>
+      </div>
+      <div class="faq-item" data-category="technical">
+        <div class="faq-question">Can I play on mobile?<span class="toggle">➕</span></div>
+        <div class="faq-answer"><p>Absolutely! PuzzleQuest is fully responsive and works great on smartphones and tablets. The grid automatically adjusts to fit your screen.</p></div>
+      </div>
+    </div>
+
+    <div class="still-q">
+      <span style="font-size:2.4rem;display:block;margin-bottom:14px;">❓</span>
+      <h3 style="margin-bottom:12px;">Still have questions?</h3>
+      <p style="margin-bottom:22px;color:var(--tx2);">We're here to help! Reach out through our contact page.</p>
+      <a href="contact.html" class="btn btn--primary">📧 Contact Us</a>
+    </div>
+
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Accordion toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function () {
+        const item = this.closest('.faq-item');
+        item.classList.toggle('open');
+        this.querySelector('.toggle').textContent = item.classList.contains('open') ? '✕' : '➕';
+      });
+    });
+    // Search
+    document.getElementById('faq-search')?.addEventListener('input', function (e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+    // Category filter
+    document.querySelectorAll('.faq-cat-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const cat = this.dataset.cat;
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.style.display = (cat === 'all' || item.dataset.category === cat) ? '' : 'none';
+        });
+      });
+    });
+  });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

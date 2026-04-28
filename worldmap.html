@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aetheria World Map — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="worldmap-page">
+    <div class="worldmap-header">
+      <span class="section__label">🗺️ Aether Map</span>
+      <h1>The Floating Islands of Aetheria</h1>
+      <p class="worldmap-subtitle">Five islands float in the endless sky. Each holds shattered memories waiting to be restored.</p>
+    </div>
+
+    <!-- Map Paper Container with Background Image -->
+    <div class="map-paper-container">
+      <div class="map-paper" style="background-image: url('assets/background/mapbackground.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Parchment texture overlay -->
+        <div class="map-parchment"></div>
+        
+        <!-- Map decorative corners -->
+        <div class="map-corner corner-tl"></div>
+        <div class="map-corner corner-tr"></div>
+        <div class="map-corner corner-bl"></div>
+        <div class="map-corner corner-br"></div>
+        
+        <!-- Map compass rose -->
+        <div class="map-compass">
+          <div class="compass-rose">
+            <span class="compass-n">N</span>
+            <span class="compass-s">S</span>
+            <span class="compass-e">E</span>
+            <span class="compass-w">W</span>
+            <div class="compass-center">⬩</div>
+          </div>
+        </div>
+
+        <div class="world-map-container">
+          <svg class="map-connections" id="mapConnections"></svg>
+          
+          <div class="map-islands">
+            <!-- Island 1 - Animals (Top Left) -->
+            <div class="map-island" data-world="animals" style="top: 5%; left: 5%;">
+              <div class="island-wrapper">
+                <img src="assets/worlds/animal-island.png" alt="Whispering Woods" class="island-img" onerror="this.src='https://placehold.co/200x200/22c55e/white?text=🌲'">
+                <div class="island-ring"></div>
+              </div>
+              <div class="island-info">
+                <span class="island-emoji">🌲</span>
+                <span class="island-name">Whispering Woods</span>
+              </div>
+              <div class="island-hover-card">
+                <h4>🌲 Whispering Woods</h4>
+                <p>Animals Category</p>
+                <small>5 puzzles to solve →</small>
+              </div>
+            </div>
+
+            <!-- Island 2 - Famous (Top Right) -->
+            <div class="map-island" data-world="famous" style="top: 5%; right: 5%;">
+              <div class="island-wrapper">
+                <img src="assets/worlds/famous-island.png" alt="History of Legends" class="island-img" onerror="this.src='https://placehold.co/200x200/3b82f6/white?text=🏛️'">
+                <div class="island-ring"></div>
+              </div>
+              <div class="island-info">
+                <span class="island-emoji">🏛️</span>
+                <span class="island-name">History of Legends</span>
+              </div>
+              <div class="island-hover-card">
+                <h4>🏛️ History of Legends</h4>
+                <p>Famous People Category</p>
+                <small>5 puzzles to solve →</small>
+              </div>
+            </div>
+
+            <!-- Island 3 - Cars (Center) -->
+            <div class="map-island" data-world="cars" style="top: 45%; left: 50%; transform: translate(-50%, -50%);">
+              <div class="island-wrapper">
+                <img src="assets/worlds/car-island.png" alt="Wonder Wheels" class="island-img" onerror="this.src='https://placehold.co/250x250/ef4444/white?text=⚙️'">
+                <div class="island-ring"></div>
+              </div>
+              <div class="island-info">
+                <span class="island-emoji">⚙️</span>
+                <span class="island-name">Wonder Wheels</span>
+              </div>
+              <div class="island-hover-card">
+                <h4>⚙️ Wonder Wheels</h4>
+                <p>Cars Category</p>
+                <small>5 puzzles to solve →</small>
+              </div>
+            </div>
+
+            <!-- Island 4 - Flowers (Bottom Left) -->
+            <div class="map-island" data-world="flowers" style="bottom: 8%; left: 8%;">
+              <div class="island-wrapper">
+                <img src="assets/worlds/flowers-island.png" alt="Blooming Meadows" class="island-img" onerror="this.src='https://placehold.co/200x200/ec4899/white?text=🌸'">
+                <div class="island-ring"></div>
+              </div>
+              <div class="island-info">
+                <span class="island-emoji">🌸</span>
+                <span class="island-name">Blooming Meadows</span>
+              </div>
+              <div class="island-hover-card">
+                <h4>🌸 Blooming Meadows</h4>
+                <p>Flowers Category</p>
+                <small>5 puzzles to solve →</small>
+              </div>
+            </div>
+
+            <!-- Island 5 - Landscapes (Bottom Right) -->
+            <div class="map-island" data-world="wonders" style="bottom: 8%; right: 8%;">
+              <div class="island-wrapper">
+                <img src="assets/worlds/wonders-island.png" alt="Echoes of Time" class="island-img" onerror="this.src='https://placehold.co/200x200/06b6d4/white?text=⏳'">
+                <div class="island-ring"></div>
+              </div>
+              <div class="island-info">
+                <span class="island-emoji">⏳</span>
+                <span class="island-name">Echoes of Time</span>
+              </div>
+              <div class="island-hover-card">
+                <h4>⏳ Echoes of Time</h4>
+                <p>Landscapes Category</p>
+                <small>5 puzzles to solve →</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Map decorative elements -->
+        <div class="map-sea-monster">🐉</div>
+        <div class="map-ship">⛵</div>
+      </div>
+    </div>
+
+    <div class="worldmap-footer">
+      <div class="barnaby-message">
+        <img src="assets/character/barnaby1.png" alt="Barnaby" class="barnaby-icon" onerror="this.src='https://placehold.co/50x50/0ea5e9/white?text=🦉'">
+        <p>"Each floating island holds five hidden memories. Solve the puzzles to bring color back to Aetheria!"</p>
+        <span>— Barnaby the Archivist</span>
+      </div>
+    </div>
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

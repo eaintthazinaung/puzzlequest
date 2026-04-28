@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier Library — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="lib-page">
+
+    <div class="page-hero">
+      <span class="section__label">✨ The Lost Atelier</span>
+      <h1>📚 Knowledge Library</h1>
+      <p>
+        Every puzzle you solve restores a piece of Aetheria and unlocks a Knowledge Card.
+        Hover or tap a card to flip it and read the fact!
+      </p>
+    </div>
+
+    <div id="lib-stats"></div>
+
+    <div class="lib-controls">
+      <input type="search" id="lib-search" placeholder="🔍 Search cards…" aria-label="Search cards"/>
+      <select id="lib-filter" aria-label="Filter by category">
+        <option value="">All Categories</option>
+      </select>
+    </div>
+
+    <div id="lib-grid" role="list" aria-label="Knowledge card collection"></div>
+
+  </div>
+</main>
+<footer id="main-footer"></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

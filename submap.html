@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Puzzle — PuzzleQuest</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav id="main-nav"></nav>
+<main>
+  <div class="submap-page">
+    <div class="submap-header">
+      <span class="section__label">🧩 Memory Fragments</span>
+      <h1 id="submap-title">The Whispering Woods</h1>
+      <p id="submap-sub" style="color:var(--tx2);margin-bottom:16px;">Animals</p>
+      <button class="btn btn--ghost btn--sm" id="hub-back">← Back to World Map</button>
+    </div>
+
+    <!-- Railway Track Container -->
+    <div class="railway-container">
+      <div class="railway-track top-track">
+        <div class="track-line"></div>
+        <div class="track-stations" id="topStations"></div>
+      </div>
+      
+      <div class="railway-connector"></div>
+      
+      <div class="railway-track bottom-track">
+        <div class="track-line"></div>
+        <div class="track-stations" id="bottomStations"></div>
+      </div>
+    </div>
+
+    <!-- Points Info -->
+    <div class="points-info" id="pointsInfo">
+      <span>⭐ Your Points: <strong id="playerPoints">0</strong></span>
+      <span class="unlock-hint">🔓 Unlock new levels with 100 points each</span>
+    </div>
+  </div>
+</main>
+<footer id="main-footer"></footer>
+
+<!-- Grid Size Selection Popup Modal -->
+<div class="grid-modal-overlay" id="gridModal">
+  <div class="grid-modal">
+    <div class="grid-modal-header">
+      <span class="modal-icon">🎮</span>
+      <h3>Choose Grid Size</h3>
+      <button class="modal-close" id="closeModalBtn">✕</button>
+    </div>
+    <div class="grid-modal-body">
+      <p class="modal-subtitle">Bigger grids are harder but earn more points!</p>
+      <div class="modal-grid-buttons" id="modalGridButtons"></div>
+      <div class="modal-info" id="modalInfo">
+        <span>⚡ 3×3 · 100 moves · 10 pts</span>
+      </div>
+    </div>
+    <div class="grid-modal-footer">
+      <button class="btn btn--ghost" id="cancelModalBtn">Cancel</button>
+      <button class="btn btn--primary" id="startGameBtn">🎮 Start Puzzle</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
