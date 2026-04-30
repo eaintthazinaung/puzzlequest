@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   main.js — PuzzleQuest v2 (Aetheria Update)
+   main.js — PuzzleQuest (Aetheria Update)
    Config · Store · Auth · Guardian · Lives · Sound · Nav · Pages · Router
    ============================================================ */
 // CHARACTER SHOWCASE INTERACTIVITY
@@ -151,8 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial load
   updateCharacter('elara');
 });
-
-
 
 // ─── CONFIG ────────────────────────────────────────────────
 const CONFIG = {
@@ -417,8 +415,6 @@ const Auth = {
 };
 
 // ─── GUARDIAN SYSTEM ─────────────────────────────────────────
-// ─── GUARDIAN SYSTEM WITH MUSIC CHANGE ─────────────────────────
-// ─── GUARDIAN SYSTEM WITH MUSIC CHANGE - FIXED ─────────────────
 const Guardian = {
   apply() {
     const pr = Auth.current();
@@ -823,7 +819,6 @@ const LoginPage = {
 };
 
 // ─── PAGE: WELCOME ───────────────────────────────────────────
-// ─── PAGE: WELCOME ───────────────────────────────────────────
 const Welcome = {
   step: 0,
   steps: [
@@ -936,7 +931,6 @@ const Welcome = {
 };
 
 // ─── PAGE: GUARDIAN SELECT ───────────────────────────────────
-// ─── PAGE: GUARDIAN SELECT (UPDATED WITH TOUCH SUPPORT) ───────────────────────────────────
 const GuardianPage = {
   selected: null,
 
@@ -1052,9 +1046,6 @@ const GuardianPage = {
         card.classList.toggle('flipped');
       });
     });
-
-    // Confirm button
-    // Inside GuardianPage.init(), find the confirm button code and replace it with this:
 
 // Inside GuardianPage.init() - Update confirm button
 document.getElementById('guardian-confirm')?.addEventListener('click', () => {
@@ -1676,7 +1667,7 @@ const ProfilePage = {
 };
 
 // ============================================================
-// BACKGROUND MUSIC CONTROLLER WITH GUARDIAN THEMES - FIXED
+// BACKGROUND MUSIC CONTROLLER WITH GUARDIAN THEMES 
 // ============================================================
 
 const BackgroundMusic = {

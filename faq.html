@@ -6,41 +6,138 @@
   <title>FAQ — PuzzleQuest</title>
   <link rel="stylesheet" href="css/style.css"/>
   <style>
-    .faq-page { max-width: 860px; margin: 0 auto; padding: 40px 24px 64px; }
-    .faq-hero  { text-align: center; margin-bottom: 40px; }
-    .faq-search { margin-bottom: 28px; position: relative; }
-    .faq-search input { padding: 14px 20px 14px 48px; border-radius: var(--r-full); }
-    .faq-search::before { content: '🔍'; position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; opacity: .55; }
-    .faq-cats  { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; justify-content: center; }
+    .faq-page {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 40px 24px 64px;
+    }
+
+    .faq-hero {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .faq-search {
+        margin-bottom: 28px;
+        position: relative;
+    }
+
+    .faq-search input {
+        padding: 14px 20px 14px 48px;
+        border-radius: var(--r-full);
+    }
+
+    .faq-search::before {
+        content: '🔍';
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+        opacity: .55;
+    }
+
+    .faq-cats {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+        justify-content: center;
+    }
+
     .faq-cat-btn {
-      padding: 7px 18px; border-radius: var(--r-full);
-      border: 1.5px solid var(--bdr); background: var(--bg-card);
-      color: var(--tx2); font-weight: 600; font-size: .87rem;
-      cursor: pointer; transition: all .18s;
+        padding: 7px 18px;
+        border-radius: var(--r-full);
+        border: 1.5px solid var(--bdr);
+        background: var(--bg-card);
+        color: var(--tx2);
+        font-weight: 600;
+        font-size: .87rem;
+        cursor: pointer;
+        transition: all .18s;
     }
-    .faq-cat-btn:hover, .faq-cat-btn.active { background: var(--pri); border-color: var(--pri); color: #fff; }
+
+    .faq-cat-btn:hover,
+    .faq-cat-btn.active {
+        background: var(--pri);
+        border-color: var(--pri);
+        color: #fff;
+    }
+
     .faq-item {
-      background: var(--bg-card); border: 1.5px solid var(--bdr);
-      border-radius: var(--r-lg); margin-bottom: 12px; overflow: hidden;
-      transition: border-color .2s, box-shadow .2s;
+        background: var(--bg-card);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--r-lg);
+        margin-bottom: 12px;
+        overflow: hidden;
+        transition: border-color .2s, box-shadow .2s;
     }
-    .faq-item:hover { border-color: var(--pri); box-shadow: var(--sh-sm); }
+
+    .faq-item:hover {
+        border-color: var(--pri);
+        box-shadow: var(--sh-sm);
+    }
+
     .faq-question {
-      padding: 18px 22px; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      font-weight: 700; font-size: 1rem; gap: 16px;
+        padding: 18px 22px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1rem;
+        gap: 16px;
     }
-    .faq-question .toggle { font-size: 1.1rem; transition: transform .25s; flex-shrink: 0; }
-    .faq-item.open .faq-question .toggle { transform: rotate(45deg); }
+
+    .faq-question .toggle {
+        font-size: 1.1rem;
+        transition: transform .25s;
+        flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-question .toggle {
+        transform: rotate(45deg);
+    }
+
     .faq-answer {
-      max-height: 0; padding: 0 22px; overflow: hidden;
-      transition: all .3s ease; color: var(--tx2); border-top: 0 solid var(--bdr);
+        max-height: 0;
+        padding: 0 22px;
+        overflow: hidden;
+        transition: all .3s ease;
+        color: var(--tx2);
+        border-top: 0 solid var(--bdr);
     }
-    .faq-item.open .faq-answer { max-height: 300px; padding: 0 22px 18px; border-top-width: 1px; }
-    .faq-answer p  { margin-bottom: 8px; font-size: .92rem; }
-    .faq-answer ul { list-style: disc; padding-left: 20px; margin-top: 8px; font-size: .92rem; }
-    .faq-answer li { margin-bottom: 4px; }
-    .still-q { text-align: center; margin-top: 44px; padding: 40px; background: var(--bg-alt); border-radius: var(--r-xl); border: 1.5px solid var(--bdr); }
+
+    .faq-item.open .faq-answer {
+        max-height: 300px;
+        padding: 0 22px 18px;
+        border-top-width: 1px;
+    }
+
+    .faq-answer p {
+        margin-bottom: 8px;
+        font-size: .92rem;
+    }
+
+    .faq-answer ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-top: 8px;
+        font-size: .92rem;
+    }
+
+    .faq-answer li {
+        margin-bottom: 4px;
+    }
+
+    .still-q {
+        text-align: center;
+        margin-top: 44px;
+        padding: 40px;
+        background: var(--bg-alt);
+        border-radius: var(--r-xl);
+        border: 1.5px solid var(--bdr);
+    }
   </style>
 </head>
 <body>

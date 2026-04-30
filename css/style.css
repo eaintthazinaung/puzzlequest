@@ -1,12 +1,11 @@
 /* ============================================================
-   style.css — PuzzleQuest (v2 · Aetheria Update)
+   style.css — PuzzleQuest ( Aetheria Update)
    Tokens · Guardian Themes · Reset · Layout · Components · Pages
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ─── DESIGN TOKENS ─────────────────────────────────────────── */
-/* ─── DESIGN TOKENS - UPDATED WITH LIGHT SKY BLUE ───────────── */
 :root {
   --pri:     #0ea5e9;
   --pri-d:   #0284c7;
@@ -3495,10 +3494,6 @@ footer#main-footer {
 }
 
 /* ─── WORLD MAP ─────────────────────────────────────────────── */
-/* ============================================================
-   WORLD MAP PAGE - SMALLER GRID, LARGER ISLANDS
-   ============================================================ */
-
 .worldmap-page {
   min-height: calc(100vh - var(--nav-h));
   position: relative;
